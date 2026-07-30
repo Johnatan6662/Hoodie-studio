@@ -12,6 +12,8 @@ export default function Cart() {
     <div className="fixed top-0 right-0 h-screen w-96 overflow-y-auto bg-zinc-900 p-36 text-white">
       <h2 className="text-3xl font-bold">Shopping Cart</h2>
 
+      {/* {items.length} */}
+
       <div className="mt-8 space-y-5">
         {items.map((item) => (
           <div
