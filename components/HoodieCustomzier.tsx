@@ -13,6 +13,7 @@ import { hoodieColors } from "../data/hoodie"
 import LogoControls from "./Logocontrols"
 import DownloadButton from "./DownloadButton"
 import { SizeProps } from "@/interfaces/common"
+import AddToCartButton from "./AddToCartButton"
 
 
 export default function HoodieCustomizer() {
@@ -82,6 +83,18 @@ export default function HoodieCustomizer() {
 
             <h2 className="mt-5 text-3xl font-bold">$29.99</h2>
           </div>
+
+          <AddToCartButton 
+          item={{
+            id: selected.id,
+            name: selected.name,
+            image: selected.image,
+            color: selected.color,
+            size: size,
+            price: 29.99,
+            quantity: 1,
+          }}
+          />
         </div>
       </div>
     </section>

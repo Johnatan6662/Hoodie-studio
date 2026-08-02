@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import HoodieCustomizer from "@/components/HoodieCustomier";
+import HoodieCustomizer from "@/components/HoodieCustomzier";
 import Navbar from "@/components/Navbar";
 import Cart from "@/components/Cart";
 
