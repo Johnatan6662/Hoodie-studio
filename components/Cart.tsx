@@ -5,11 +5,10 @@ import { useCart } from "@/store/cart"
 
 export default function Cart() {
   const { items, removeItem } = useCart()
-
   const total = items.reduce((sum, item) => sum + item.price, 0)
 
   return (
-    <div className="absolute right-6 top-20 z-50 w-96 rounded-2xl bg-white p-6 shadow-2xl border border-gray-200">
+    <div className="fixed right-6 top-20 z-50 w-96 rounded-2xl bg-white p-6 shadow-2xl border border-gray-200">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-900">
           Shopping Cart
@@ -30,7 +29,7 @@ export default function Cart() {
         </div>
       ) : (
         <>
-          <div className="max-h-[400px] space-y-4 overflow-y-auto">
+          <div className="max-h-100 space-y-4 overflow-y-auto">
             {items.map((item) => (
               <div
                 key={item.id}

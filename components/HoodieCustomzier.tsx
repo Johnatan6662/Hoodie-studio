@@ -35,7 +35,7 @@ export default function HoodieCustomizer() {
   
 
   return (
-    <section className="py-24">
+    <section id="customize" className="py-24">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2">
         <HoodiePreview
           image={selected.image}
