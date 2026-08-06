@@ -1,0 +1,38 @@
+export const recommendedHoodies = [
+  {
+    id: 101,
+    name: "Classic Black Hoodie",
+    image: "/hoodie/black.png",
+    color: "Black",
+    size: "M",
+    price: 39.99,
+    rating: 4.9,
+  },
+  {
+    id: 102,
+    name: "Pure White Hoodie",
+    image: "/hoodie/white.png",
+    color: "White",
+    size: "L",
+    price: 42.99,
+    rating: 4.8,
+  },
+  {
+    id: 103,
+    name: "Red Street Hoodie",
+    image: "/hoodie/red.png",
+    color: "Red",
+    size: "XL",
+    price: 44.99,
+    rating: 4.9,
+  },
+  {
+    id: 104,
+    name: "Ocean Blue Hoodie",
+    image: "/hoodie/blue.png",
+    color: "Blue",
+    size: "M",
+    price: 41.99,
+    rating: 4.7,
+  },
+];

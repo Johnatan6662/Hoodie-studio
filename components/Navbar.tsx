@@ -1,11 +1,16 @@
 "use client"
 
 import Link from "next/link"
-import { Menu, Search, ShoppingCart, X } from "lucide-react"
+import { Menu, ShoppingCart, X } from "lucide-react"
 import { useState } from "react"
+import SearchBar from "./SearchBar"
+import { useCart } from "@/store/cart"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+
+  const items = useCart((state) => state.items)
+  const toggleCart = useCart((state) => state.toggleCart)
 
   const links = [
     { name: "Home", href: "#home" },
@@ -23,6 +28,7 @@ export default function Navbar() {
         >
           CREATE.
         </Link>
+
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <Link
@@ -36,17 +42,19 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <div className="flex items-center rounded-xl bg-zinc-800 px-3 py-2">
-            <Search size={18} />
-            <input
-              type="text"
-              placeholder="Search..."
-              className="ml-2 bg-transparent outline-none"
-            />
-          </div>
+          <SearchBar />
 
-          <button className="rounded-xl bg-orange-500 p-3 transition hover:scale-105">
+          <button
+            onClick={toggleCart}
+            className="relative rounded-xl bg-orange-500 p-3 transition hover:scale-105"
+          >
             <ShoppingCart size={20} />
+
+            {items.length > 0 && (
+              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
+                {items.length}
+              </span>
+            )}
           </button>
         </div>
 
@@ -67,10 +75,14 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
+
           <div className="p-6">
-            <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-semibold">
+            <button
+              onClick={toggleCart}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 py-3 font-semibold"
+            >
               <ShoppingCart size={18} />
-              Cart
+              Cart ({items.length})
             </button>
           </div>
         </div>
