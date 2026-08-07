@@ -8,22 +8,22 @@ export default function Cart() {
   const total = items.reduce((sum, item) => sum + item.price, 0)
 
   return (
-    <div className="fixed right-6 top-20 z-50 w-96 rounded-2xl bg-white p-6 shadow-2xl border border-gray-200">
+    <div className="fixed right-6 top-20 z-50 w-96 rounded-2xl bg-black p-6 shadow-2xl border border-orange-500/200">
       <div className="mb-6 flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-white">
           Shopping Cart
         </h2>
 
-        <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
+        <span className="rounded-full bg-white px-3 py-1 text-sm font-medium text-white">
           {items.length} items
         </span>
       </div>
       {items.length === 0 ? (
         <div className="py-16 text-center">
-          <p className="text-lg font-medium text-gray-700">
+          <p className="text-lg font-medium text-white">
             Your cart is empty
           </p>
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="mt-2 text-sm text-white">
             Add something to get started.
           </p>
         </div>
@@ -44,16 +44,16 @@ export default function Cart() {
                 />
 
                 <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900">
+                  <h3 className="font-semibold text-white">
                     {item.name}
                   </h3>
 
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-white">
                     {item.color} • {item.size}
                   </p>
 
-                  <p className="mt-1 font-bold text-gray-900">
-                    £{item.price}
+                  <p className="mt-1 font-bold text-white">
+                    ${item.price}
                   </p>
                 </div>
 
@@ -69,11 +69,11 @@ export default function Cart() {
 
           <div className="mt-6 border-t pt-5">
             <div className="mb-4 flex items-center justify-between">
-              <span className="text-lg font-semibold text-gray-700">
+              <span className="text-lg font-semibold text-white">
                 Total
               </span>
 
-              <span className="text-2xl font-bold text-gray-900">
+              <span className="text-2xl font-bold text-white">
                 ${total}
               </span>
             </div>
